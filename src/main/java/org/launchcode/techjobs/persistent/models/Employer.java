@@ -15,9 +15,10 @@ public class Employer extends AbstractEntity {
     @Size (max = 100)
     public String location;
 
-    @OneToMany(mappedBy = "employer") //IS THIS THE CORRECT NAME?
-    @JoinColumn                       // WTH IS THIS?
-    private final List<Job> jobs = new ArrayList<>();
+    @OneToMany
+    @JoinColumn(name = "employer_id")
+    private List<Job> jobs = new ArrayList<>();
+
     public String getLocation() {
         return location;
     }
